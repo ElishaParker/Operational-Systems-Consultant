@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Elisha Parker — Operational Systems Consultant</title>
+  <meta name="description" content="I help companies reduce operational friction and reclaim time lost to fragmented systems and redundant workflows through practical automation and structured operational design." />
+
+  <style>
+    :root{
+      --bg:#0b0d12;
+      --surface:#0f1116;
+      --ink:#f2f4f8;
+      --muted:#b7c0d0;
+      --line:rgba(255,255,255,.10);
+      --accent:#ffffff;
+      --max: 980px;
+      --radius: 14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:44px 18px 80px;}
+    .top{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:16px;
+      padding-bottom:18px; border-bottom:1px solid var(--line);
+    }
+    .id b{display:block; font-size:14px; letter-spacing:.4px}
+    .id span{display:block; font-size:13px; color:var(--muted); margin-top:2px}
+    .nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+    .nav a{
+      text-decoration:none; font-size:13px; color:var(--muted);
+      padding:6px 0;
+      border-bottom:1px solid transparent;
+    }
+    .nav a:hover{color:var(--ink); border-bottom-color:var(--line)}
+
+    .hero{padding:34px 0 18px;}
+    h1{margin:0 0 10px; font-size:44px; letter-spacing:-.8px; line-height:1.12}
+    p{margin:10px 0}
+    .muted{color:var(--muted)}
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      text-decoration:none;
+      font-weight:650;
+      font-size:14px;
+      background: transparent;
+    }
+    .btn.primary{
+      background: var(--accent);
+      color:#0b0d12;
+      border-color: transparent;
+    }
+
+    .subline{max-width:68ch}
+
+    .section{padding:26px 0; border-top:1px solid var(--line)}
+    .section:first-of-type{border-top:none}
+    h2{margin:0 0 10px; font-size:20px; letter-spacing:-.2px}
+
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:18px;
+    }
+    .aboutRow{
+      display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+    }
+    .avatar{
+      width:110px; height:110px;
+      border-radius:14px;
+      object-fit:cover;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.25);
+      flex: 0 0 auto;
+    }
+    .aboutText{min-width:240px; flex:1}
+    .aboutText .muted{margin:4px 0 0}
+
+    .tiers{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    .tier{
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+    }
+    .tierTop{
+      display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+    .tier b{font-size:15px}
+    .price{font-weight:800}
+
+    ul{margin:10px 0 0 18px}
+    li{margin:7px 0}
+
+    form{margin-top:10px}
+    label{display:block; font-size:13px; color:var(--muted); margin:10px 0 6px}
+    input, select, textarea{
+      width:100%;
+      padding:11px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--ink);
+      outline:none;
+    }
+    textarea{resize:vertical}
+    .footer{
+      margin-top:30px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    /* Make it feel calm on smaller screens */
+    @media (max-width: 760px){
+      h1{font-size:36px}
+      .nav{justify-content:flex-start}
+      .avatar{width:92px; height:92px}
+    }
+  </style>
+
+  <script>
+    // Hide the sample button if the PDF isn't present (prevents dead links)
+    document.addEventListener("DOMContentLoaded", async () => {
+      const btn = document.getElementById("sampleBtn");
+      if (!btn) return;
+      try{
+        const r = await fetch("assets/blueprint_sample.pdf", { method: "HEAD" });
+        if (!r.ok) btn.style.display = "none";
+      }catch(e){
+        btn.style.display = "none";
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- Top -->
+    <div class="top">
+      <div class="id">
+        <b>Elisha Parker</b>
+        <span>Operational Systems Consultant</span>
+      </div>
+      <div class="nav">
+        <a href="#tiers">Tiers</a>
+        <a href="#deliverable">Deliverable</a>
+        <a href="#ai">AI Alignment</a>
+        <a href="#booking">Request Booking</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Reduce operational friction.<br/>Reclaim lost time.</h1>
+
+      <!-- Restored wording exactly as in your current file -->
+      <p class="muted subline">
+        I help companies reduce operational friction and reclaim time lost to fragmented systems and redundant workflows
+        through practical automation and structured operational design.
+      </p>
+
+      <div class="ctaRow">
+        <a class="btn primary" href="#booking">Request Booking</a>
+        <a class="btn" href="#tiers">See Tiers & Pricing</a>
+        <a class="btn" id="sampleBtn" href="assets/blueprint_sample.pdf" target="_blank" rel="noopener">View Sample Deliverable</a>
+      </div>
+
+      <p class="muted subline" style="margin-top:16px;">
+        The problem isn’t “not enough tools.” It’s tools that don’t work together — causing duplicate entry, scattered job info,
+        missed follow-ups, and wasted hours every week. My work focuses on simplification first, automation second.
+      </p>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <h2>About</h2>
+
+      <div class="aboutRow">
+        <img class="avatar" src="assets/headshot.jpg" alt="Elisha Parker headshot"
+             onerror="this.style.display='none';" />
+        <div class="aboutText">
+          <p style="margin:0;">
+            I work with service-based operations to reduce fragmentation across communication, job tracking, documentation, invoicing,
+            and follow-ups — so the business runs smoother with fewer moving parts.
+          </p>
+          <p class="muted" style="margin:6px 0 0;">
+            Email: <a href="mailto:elishaparker@hotmail.com">elishaparker@hotmail.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tiers -->
+    <section class="section" id="tiers">
+      <h2>Tiers & starting prices</h2>
+      <p class="muted subline">
+        Pricing scales with business size and operational complexity. Each tier focuses on identifying time loss, simplifying workflow,
+        and creating a practical path to automation.
+      </p>
+
+      <div class="tiers">
+        <div class="tier">
+          <div class="tierTop">
+            <b>Owner + 1 employee (2–3 people)</b>
+            <span class="price">Starting at $795</span>
+          </div>
+          <ul>
+            <li>Fast review of workflow + tool usage</li>
+            <li>Top time leaks + quick structural fixes</li>
+            <li>1–2 practical automation recommendations</li>
+          </ul>
+        </div>
+
+        <div class="tier">
+          <div class="tierTop">
+            <b>Small team (3–5 people)</b>
+            <span class="price">Starting at $1,250</span>
+          </div>
+          <ul>
+            <li>Cross-role friction review</li>
+            <li>Tool consolidation recommendations</li>
+            <li>Clear improvement roadmap</li>
+          </ul>
+        </div>
+
+        <div class="tier">
+          <div class="tierTop">
+            <b>Growing team (6–15 people)</b>
+            <span class="price">Starting at $2,500</span>
+          </div>
+          <ul>
+            <li>Multi-role mapping + coordination friction</li>
+            <li>Stronger operational structure plan</li>
+            <li>Automation prioritization by impact</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="muted" style="margin-top:12px;">
+        <b>15+ employees / multi-department operations:</b> custom scoped engagement. Send a request and I’ll confirm scope and fit.
+      </p>
+    </section>
+
+    <!-- Deliverable -->
+    <section class="section" id="deliverable">
+      <h2>What you receive (deliverable summary)</h2>
+      <p class="muted subline">
+        You’ll receive a clear written blueprint. It’s designed for non-technical teams: plain language, structured, and actionable.
+      </p>
+      <ul>
+        <li><b>Workflow snapshot</b> (how work moves through your business)</li>
+        <li><b>Top friction points</b> (where time and attention are leaking)</li>
+        <li><b>Redundancy removal</b> (what to stop doing / consolidate)</li>
+        <li><b>Automation shortlist</b> (what’s worth automating first)</li>
+        <li><b>Next-step plan</b> (practical sequence, not a tech rabbit hole)</li>
+      </ul>
+      <p class="muted" style="margin-top:12px;">
+        If you want a sample deliverable, I can provide one directly after a booking request.
+      </p>
+    </section>
+
+    <!-- AI Alignment -->
+    <section class="section" id="ai">
+      <h2>AI alignment (grounded, no hype)</h2>
+      <p><b>AI is not replacing your team — it’s replacing friction.</b></p>
+      <p class="muted subline">
+        The future of AI in business isn’t about removing people. It’s about removing repetitive work, reducing cross-app navigation,
+        eliminating duplicate data entry, and giving owners clearer visibility into operations.
+      </p>
+      <p class="muted subline">
+        Most companies aren’t behind because they lack tools — they’re overwhelmed because their tools don’t work together.
+        The goal here is simple: simplify first, then automate what actually matters.
+      </p>
+      <p class="muted subline">
+        Less copying. Less searching. Less remembering. More clarity. More leverage. More control.
+      </p>
+    </section>
+
+    <!-- Booking -->
+    <section class="section" id="booking">
+      <h2>Request booking</h2>
+      <p class="muted subline">
+        No free calls. Send a booking request with your business size and current tools, and I’ll reply with scope confirmation and next steps.
+      </p>
+
+      <!-- NOTE: Replace the action URL with your Formspree endpoint when ready -->
+      <form action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+        <label for="name">Name</label>
+        <input id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required />
+
+        <label for="company">Company</label>
+        <input id="company" name="company" />
+
+        <label for="team_size">Team size</label>
+        <select id="team_size" name="team_size" required>
+          <option value="">Select…</option>
+          <option>Owner + 1 employee (2–3 people)</option>
+          <option>Small team (3–5)</option>
+          <option>Growing team (6–15)</option>
+          <option>15+ / larger operation</option>
+        </select>
+
+        <label for="tools">Current tools</label>
+        <input id="tools" name="tools" placeholder="e.g., Outlook, QuickBooks, Jobber, Google Drive, WhatsApp…" />
+
+        <label for="pain">Biggest time sink right now</label>
+        <textarea id="pain" name="pain" rows="4" required></textarea>
+
+        <label for="tier">Requested tier</label>
+        <select id="tier" name="tier" required>
+          <option value="">Select…</option>
+          <option>Starting at $795 (Owner + 1)</option>
+          <option>Starting at $1,250 (3–5 people)</option>
+          <option>Starting at $2,500 (6–15 people)</option>
+          <option>Custom scoped (15+)</option>
+        </select>
+
+        <div class="ctaRow" style="margin-top:14px;">
+          <button class="btn primary" type="submit">Send request</button>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <p class="muted">Email is best for inquiries and scope details.</p>
+      <p style="margin:6px 0 0;">
+        <b>Email:</b> <a href="mailto:elishaparker@hotmail.com">elishaparker@hotmail.com</a><br/>
+        <b>Location / timezone:</b> Toronto (ET)
+      </p>
+
+      <p class="muted" style="margin-top:12px;">
+        <b>For pricing questions:</b> include your team size, current tools, and your biggest time sink — I’ll confirm the correct tier and scope.
+      </p>
+    </section>
+
+    <div class="footer">
+      <div>© 2026 Elisha Parker. All Rights Reserved.</div>
+      <div class="muted">Built on GitHub Pages</div>
+    </div>
+
+  </div>
+</body>
+</html>
